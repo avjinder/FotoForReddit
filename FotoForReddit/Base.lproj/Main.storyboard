@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ykT-2w-dWA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="FotoForReddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Doj-ms-jZ9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="80" id="EHW-AP-rwo" customClass="TableViewCell" customModule="FotoForReddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EHW-AP-rwo" id="deI-Ym-hJd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aAV-L4-v8P" customClass="CustomCollectionViewMain" customModule="FotoForReddit" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="iHi-YF-Ltj">
+                                                        <size key="itemSize" width="80" height="80"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="Hb0-wZ-waS" customClass="PhotosCollectionViewCell" customModule="FotoForReddit" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tn5-NJ-lC6">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </imageView>
+                                                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="eih-fG-AXQ">
+                                                                        <rect key="frame" x="30" y="30" width="20" height="20"/>
+                                                                    </activityIndicatorView>
+                                                                </subviews>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstItem="tn5-NJ-lC6" firstAttribute="leading" secondItem="Hb0-wZ-waS" secondAttribute="leading" id="9UJ-Yc-TPD"/>
+                                                                <constraint firstAttribute="bottom" secondItem="tn5-NJ-lC6" secondAttribute="bottom" id="AiN-4c-dz8"/>
+                                                                <constraint firstItem="tn5-NJ-lC6" firstAttribute="top" secondItem="Hb0-wZ-waS" secondAttribute="top" id="KmR-fy-QAb"/>
+                                                                <constraint firstAttribute="trailing" secondItem="tn5-NJ-lC6" secondAttribute="trailing" id="Y1d-oc-bkt"/>
+                                                                <constraint firstItem="eih-fG-AXQ" firstAttribute="centerY" secondItem="Hb0-wZ-waS" secondAttribute="centerY" id="hHm-60-yci"/>
+                                                                <constraint firstItem="eih-fG-AXQ" firstAttribute="centerX" secondItem="Hb0-wZ-waS" secondAttribute="centerX" id="oiV-tY-1Yb"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="activityIndicator" destination="eih-fG-AXQ" id="flY-Zr-fGT"/>
+                                                                <outlet property="imageView" destination="tn5-NJ-lC6" id="Uqz-WQ-5z2"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="aAV-L4-v8P" id="AoN-p1-CpO"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Doj-ms-jZ9" secondAttribute="bottom" id="HoM-aa-I3u"/>
+                            <constraint firstAttribute="trailing" secondItem="Doj-ms-jZ9" secondAttribute="trailing" id="Kuj-Hx-zLb"/>
+                            <constraint firstItem="Doj-ms-jZ9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qiz-Y3-QAe"/>
+                            <constraint firstItem="Doj-ms-jZ9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zwc-oU-ev1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dee-1y-kc3"/>
+                    <connections>
+                        <outlet property="tableView" destination="Doj-ms-jZ9" id="02V-hC-ZaW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="-449"/>
+        </scene>
+        <!--Image Detail View Controller-->
+        <scene sceneID="bQY-cI-IQT">
+            <objects>
+                <viewController storyboardIdentifier="ImageDetailViewController" id="Hyy-9H-oQI" customClass="ImageDetailViewController" customModule="FotoForReddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hDj-6M-4em"/>
+                        <viewControllerLayoutGuide type="bottom" id="L00-gX-lu7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tsh-bq-LP6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWQ-Ei-Vw7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Hyy-9H-oQI" id="BDN-BJ-c95"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EWQ-Ei-Vw7" firstAttribute="centerX" secondItem="Tsh-bq-LP6" secondAttribute="centerX" id="Ji3-jS-6hS"/>
+                            <constraint firstItem="EWQ-Ei-Vw7" firstAttribute="leading" secondItem="Tsh-bq-LP6" secondAttribute="leading" id="QGj-DX-fkc"/>
+                            <constraint firstAttribute="trailing" secondItem="EWQ-Ei-Vw7" secondAttribute="trailing" id="bgc-4K-9ZJ"/>
+                            <constraint firstItem="EWQ-Ei-Vw7" firstAttribute="top" secondItem="Tsh-bq-LP6" secondAttribute="top" id="cPz-TM-1ni"/>
+                            <constraint firstItem="L00-gX-lu7" firstAttribute="top" secondItem="EWQ-Ei-Vw7" secondAttribute="bottom" id="g0L-Ux-Xse"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="EWQ-Ei-Vw7" id="SM1-s6-ME3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hh8-R2-gHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="504.80000000000001" y="-524.8875562218891"/>
+        </scene>
+        <!--Subreddit Section View Controller-->
+        <scene sceneID="jJ2-fD-PBh">
+            <objects>
+                <viewController storyboardIdentifier="SubredditSectionViewController" id="5lu-Pp-oWx" customClass="SubredditSectionViewController" customModule="FotoForReddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HeE-VB-m5N"/>
+                        <viewControllerLayoutGuide type="bottom" id="a7E-o1-56v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ack-gZ-Mtj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EyO-I8-kEQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gUR-ZE-B5k">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionCell" id="NPQ-Ej-WWh" customClass="PhotosCollectionViewCell" customModule="FotoForReddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tzn-5w-OtU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rNB-lB-35d">
+                                                    <rect key="frame" x="30" y="30" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Tzn-5w-OtU" firstAttribute="top" secondItem="NPQ-Ej-WWh" secondAttribute="top" id="C04-LR-GUf"/>
+                                            <constraint firstItem="rNB-lB-35d" firstAttribute="centerY" secondItem="NPQ-Ej-WWh" secondAttribute="centerY" id="I2v-11-Yvj"/>
+                                            <constraint firstItem="rNB-lB-35d" firstAttribute="centerX" secondItem="NPQ-Ej-WWh" secondAttribute="centerX" id="TtQ-QW-Tbm"/>
+                                            <constraint firstItem="Tzn-5w-OtU" firstAttribute="leading" secondItem="NPQ-Ej-WWh" secondAttribute="leading" id="fAW-Xl-bDa"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tzn-5w-OtU" secondAttribute="trailing" id="gKn-ec-Jcm"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tzn-5w-OtU" secondAttribute="bottom" id="wQr-nh-khl"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="rNB-lB-35d" id="7wq-Da-nex"/>
+                                            <outlet property="imageView" destination="Tzn-5w-OtU" id="EqV-0V-JS1"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a7E-o1-56v" firstAttribute="top" secondItem="EyO-I8-kEQ" secondAttribute="bottom" id="4Nx-pH-kbU"/>
+                            <constraint firstAttribute="trailing" secondItem="EyO-I8-kEQ" secondAttribute="trailing" id="EG2-Hd-Cxd"/>
+                            <constraint firstItem="EyO-I8-kEQ" firstAttribute="leading" secondItem="Ack-gZ-Mtj" secondAttribute="leading" id="VEO-QA-DRC"/>
+                            <constraint firstItem="EyO-I8-kEQ" firstAttribute="top" secondItem="Ack-gZ-Mtj" secondAttribute="top" id="dtc-YR-GFc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sectionCollectionView" destination="EyO-I8-kEQ" id="hxU-S6-f1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D40-h6-qgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292" y="-423"/>
+        </scene>
+        <!--Walkthrough ViewController-->
+        <scene sceneID="Sog-Ld-fZ3">
+            <objects>
+                <viewController storyboardIdentifier="WalkthroughViewControllerID" id="FRR-RE-rxk" userLabel="Walkthrough ViewController" customClass="WalkthroughViewController" customModule="FotoForReddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZJV-ud-BOh"/>
+                        <viewControllerLayoutGuide type="bottom" id="YxR-Af-NsM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wGs-H3-1C0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Subreddits" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEf-gg-zUD" userLabel="Welcome Label">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jfc-Vu-VAU">
+                                <rect key="frame" x="0.0" y="66.5" width="375" height="600.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wCq-MC-Oq7">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SubredditCell" id="os0-lL-c6x" customClass="SubredditCollectionViewCell" customModule="FotoForReddit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgV-WJ-XOp" userLabel="SubredditIcon">
+                                                    <rect key="frame" x="0.0" y="8" width="90" height="54"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallpaper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQK-Lj-KJJ" userLabel="Subreddit Name">
+                                                    <rect key="frame" x="8" y="62" width="74" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="jQK-Lj-KJJ" firstAttribute="leading" secondItem="os0-lL-c6x" secondAttribute="leadingMargin" id="0Lm-vk-cCQ"/>
+                                            <constraint firstItem="BgV-WJ-XOp" firstAttribute="top" secondItem="os0-lL-c6x" secondAttribute="topMargin" id="2uq-qd-4zK"/>
+                                            <constraint firstAttribute="trailing" secondItem="BgV-WJ-XOp" secondAttribute="trailing" id="6f2-eM-jcn"/>
+                                            <constraint firstAttribute="leading" secondItem="BgV-WJ-XOp" secondAttribute="leading" id="9nL-92-nsF"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="jQK-Lj-KJJ" secondAttribute="bottom" id="FWU-N8-A7W"/>
+                                            <constraint firstItem="BgV-WJ-XOp" firstAttribute="height" secondItem="os0-lL-c6x" secondAttribute="height" multiplier="0.6" id="Nga-0e-0lr"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="jQK-Lj-KJJ" secondAttribute="trailing" id="U6w-24-knZ"/>
+                                            <constraint firstItem="jQK-Lj-KJJ" firstAttribute="top" secondItem="BgV-WJ-XOp" secondAttribute="bottom" id="sVj-F9-8e0"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="subredditIconLabel" destination="BgV-WJ-XOp" id="Wgl-YO-TEC"/>
+                                            <outlet property="subredditNameLabel" destination="jQK-Lj-KJJ" id="AGi-gq-JvB"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93c-Eu-Djr">
+                                <rect key="frame" x="0.0" y="533.5" width="375" height="133.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DYG-nB-ubE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDF-3W-E0h">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="rZW-nI-Zyd">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="dark"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofe-UH-Cen">
+                                <rect key="frame" x="112" y="574" width="150" height="53.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="FRR-RE-rxk" eventType="touchUpInside" id="taf-pt-sUU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="93c-Eu-Djr" secondAttribute="trailing" id="531-ha-TG5"/>
+                            <constraint firstItem="Ofe-UH-Cen" firstAttribute="height" secondItem="93c-Eu-Djr" secondAttribute="height" multiplier="0.4" id="7CX-uP-fNb"/>
+                            <constraint firstItem="YxR-Af-NsM" firstAttribute="top" secondItem="93c-Eu-Djr" secondAttribute="bottom" id="Nh8-PL-6Ur"/>
+                            <constraint firstItem="Jfc-Vu-VAU" firstAttribute="top" secondItem="xEf-gg-zUD" secondAttribute="bottom" id="Okm-81-AjW"/>
+                            <constraint firstAttribute="trailing" secondItem="Jfc-Vu-VAU" secondAttribute="trailing" id="QNa-br-jVg"/>
+                            <constraint firstAttribute="bottom" secondItem="Jfc-Vu-VAU" secondAttribute="bottom" id="R6n-Yd-orl"/>
+                            <constraint firstItem="Ofe-UH-Cen" firstAttribute="centerY" secondItem="93c-Eu-Djr" secondAttribute="centerY" id="U9R-QT-o1d"/>
+                            <constraint firstItem="xEf-gg-zUD" firstAttribute="trailing" secondItem="wGs-H3-1C0" secondAttribute="trailing" id="WRA-kU-OyM"/>
+                            <constraint firstItem="xEf-gg-zUD" firstAttribute="height" secondItem="wGs-H3-1C0" secondAttribute="height" multiplier="0.1" id="adT-MW-nWl"/>
+                            <constraint firstItem="xEf-gg-zUD" firstAttribute="top" secondItem="wGs-H3-1C0" secondAttribute="topMargin" id="cqP-Oy-6Kz"/>
+                            <constraint firstItem="Ofe-UH-Cen" firstAttribute="centerX" secondItem="93c-Eu-Djr" secondAttribute="centerX" id="dnI-6R-vXo"/>
+                            <constraint firstItem="Ofe-UH-Cen" firstAttribute="width" secondItem="93c-Eu-Djr" secondAttribute="width" multiplier="0.4" id="gw2-Et-4GM"/>
+                            <constraint firstItem="93c-Eu-Djr" firstAttribute="height" secondItem="wGs-H3-1C0" secondAttribute="height" multiplier="0.2" id="jqs-gm-HhY"/>
+                            <constraint firstItem="xEf-gg-zUD" firstAttribute="leading" secondItem="wGs-H3-1C0" secondAttribute="leading" id="k9h-oQ-q6f"/>
+                            <constraint firstItem="Jfc-Vu-VAU" firstAttribute="leading" secondItem="wGs-H3-1C0" secondAttribute="leading" id="qo8-pO-Hhq"/>
+                            <constraint firstItem="93c-Eu-Djr" firstAttribute="leading" secondItem="wGs-H3-1C0" secondAttribute="leading" id="w1L-um-wrp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomBlurView" destination="93c-Eu-Djr" id="9bw-SN-K2E"/>
+                        <outlet property="collectionView" destination="Jfc-Vu-VAU" id="SIe-r2-6k7"/>
+                        <outlet property="doneButton" destination="Ofe-UH-Cen" id="dLL-yh-946"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7A-cE-YuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2169" y="-432"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="R0m-db-stF">
+            <objects>
+                <navigationController storyboardIdentifier="navigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="ykT-2w-dWA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yF2-Fb-uKn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="A1i-ii-8Zm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXp-O6-nm0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1030" y="-432"/>
+        </scene>
+    </scenes>
+</document>

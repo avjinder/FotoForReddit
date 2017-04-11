@@ -1,0 +1,10 @@
+{
+  "xcodeVersion" : "Xcode 8.2.1\nBuild version 8C1002",
+  "commitish" : "2.0.1",
+  "iOS" : [
+    {
+      "hash" : "495eec01015e3c8b510cb7916631efcddf4862907e12f03bdc9b6dfd5876b700",
+      "name" : "Hue"
+    }
+  ]
+}
