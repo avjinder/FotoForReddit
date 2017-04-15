@@ -23,13 +23,14 @@ class WalkthroughViewController: UIViewController{
         
         let navigationController = storyboard!.instantiateViewController(withIdentifier: "navigationViewController") as! UINavigationController
         
-        //selected subs added to the sub dictionary
-//        for subs in selectedSubreddits{
-//            Subreddits.user_subreddit_items[subs] = [SubredditItem]()
-//        }
         Subreddits.user_subreddits.append(contentsOf: selectedSubreddits)
+        let recommendedSubs = Subreddits.default_subreddits.filter{
+            !Subreddits.user_subreddits.contains($0)
+        }
+        Subreddits.recommended_subreddits.append(contentsOf: recommendedSubs)
         let userDefaults = UserDefaults.standard
         userDefaults.set(Subreddits.user_subreddits, forKey: Constants.UserSubredditsDefaults)
+        userDefaults.set(Subreddits.recommended_subreddits, forKey: Constants.RecommendedSubredditsDefaults)
         present(navigationController, animated: true, completion:nil)
     }
     

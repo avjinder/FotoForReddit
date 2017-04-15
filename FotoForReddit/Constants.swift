@@ -10,6 +10,7 @@ import Foundation
 
 public struct Constants{
     static let UserSubredditsDefaults = "UserSubredditDefaults"
+    static let RecommendedSubredditsDefaults = "RecommendedSubredditsDefaults"
     static let WalkthroughViewControllerID = "WalkthroughViewControllerID"
 }
 

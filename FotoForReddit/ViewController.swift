@@ -37,7 +37,9 @@ class ViewController: UIViewController{
     }
     
     func addSubreddit(_ sender: UIBarButtonItem){
-        print("Add sub")
+        let addSubVC = storyboard!.instantiateViewController(withIdentifier: "AddSubredditViewController")
+        let addSubNavVC = UINavigationController(rootViewController: addSubVC)
+        navigationController!.present(addSubNavVC, animated: true, completion: nil)
     }
     
     func startDownloadingSubreddits(forPaginationSubURL url: String? = nil){

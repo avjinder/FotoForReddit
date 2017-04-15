@@ -18,11 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let userDefaults = UserDefaults.standard
+//        userDefaults.removeObject(forKey: Constants.RecommendedSubredditsDefaults)
+//        userDefaults.removeObject(forKey: Constants.UserSubredditsDefaults)
         
-        UserDefaults.resetStandardUserDefaults()
         
         if let user_subs = userDefaults.array(forKey: Constants.UserSubredditsDefaults), let valid_subs = user_subs as? [String]{
             Subreddits.user_subreddits = valid_subs
+            
+            if let rec_subs = userDefaults.array(forKey: Constants.RecommendedSubredditsDefaults), let valid_recs = rec_subs as? [String]{
+                Subreddits.recommended_subreddits = valid_recs
+            }
         }
         else{
             let walkthroughVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Constants.WalkthroughViewControllerID)

@@ -68,6 +68,7 @@ struct Subreddits{
     
     static var user_subreddits = [String]()
     static var user_subreddit_items = [String : [SubredditItem]]()
+    static var recommended_subreddits = [String]()
 
 }
 

@@ -135,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hh8-R2-gHs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="504.80000000000001" y="-524.8875562218891"/>
+            <point key="canvasLocation" x="479" y="-449"/>
         </scene>
         <!--Subreddit Section View Controller-->
         <scene sceneID="jJ2-fD-PBh">
@@ -204,7 +204,96 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D40-h6-qgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1292" y="-423"/>
+            <point key="canvasLocation" x="1244" y="-449"/>
+        </scene>
+        <!--Add Subreddit View Controller-->
+        <scene sceneID="v38-nw-jlf">
+            <objects>
+                <viewController storyboardIdentifier="AddSubredditViewController" id="pJI-eh-nys" userLabel="Add Subreddit View Controller" customClass="AddSubredditViewController" customModule="FotoForReddit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mac-hT-YbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q1k-UN-SQ0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lcg-Kw-pVL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CtI-ZS-bsU">
+                                <rect key="frame" x="0.0" y="24" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uDf-fK-Juo">
+                                <rect key="frame" x="0.0" y="68" width="375" height="80"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UOg-Ky-fF7">
+                                        <rect key="frame" x="40" y="30" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checking, please wait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeU-fO-nd9">
+                                        <rect key="frame" x="80" y="31.5" width="141" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="UOg-Ky-fF7" firstAttribute="centerY" secondItem="uDf-fK-Juo" secondAttribute="centerY" id="7Cu-f8-KZn"/>
+                                    <constraint firstItem="UOg-Ky-fF7" firstAttribute="leading" secondItem="uDf-fK-Juo" secondAttribute="leading" constant="40" id="Iib-fl-ri5"/>
+                                    <constraint firstAttribute="height" constant="80" id="Ing-6Y-FYh"/>
+                                    <constraint firstItem="yeU-fO-nd9" firstAttribute="centerY" secondItem="uDf-fK-Juo" secondAttribute="centerY" id="mMT-le-2n2"/>
+                                    <constraint firstItem="yeU-fO-nd9" firstAttribute="leading" secondItem="UOg-Ky-fF7" secondAttribute="trailing" constant="20" id="sNF-Yn-TIA"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended Subreddits" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gg1-Ph-6TP">
+                                <rect key="frame" x="0.0" y="177" width="375" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sfR-VX-pHv">
+                                <rect key="frame" x="0.0" y="197.5" width="375" height="469.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RecommendedSubredditsCell" id="2M3-eM-GqE">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2M3-eM-GqE" id="x9r-ZU-61A">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CtI-ZS-bsU" secondAttribute="trailing" id="GMc-4e-x7D"/>
+                            <constraint firstItem="sfR-VX-pHv" firstAttribute="top" secondItem="Gg1-Ph-6TP" secondAttribute="bottom" id="HsN-k8-isB"/>
+                            <constraint firstAttribute="trailing" secondItem="sfR-VX-pHv" secondAttribute="trailing" id="HzU-kp-CSK"/>
+                            <constraint firstItem="sfR-VX-pHv" firstAttribute="leading" secondItem="Lcg-Kw-pVL" secondAttribute="leading" id="Puh-OZ-tJ7"/>
+                            <constraint firstAttribute="trailing" secondItem="uDf-fK-Juo" secondAttribute="trailing" id="UZC-xT-QSt"/>
+                            <constraint firstItem="Q1k-UN-SQ0" firstAttribute="top" secondItem="sfR-VX-pHv" secondAttribute="bottom" id="YlA-js-2y2"/>
+                            <constraint firstItem="CtI-ZS-bsU" firstAttribute="leading" secondItem="Lcg-Kw-pVL" secondAttribute="leading" id="aRs-j3-vBE"/>
+                            <constraint firstItem="Gg1-Ph-6TP" firstAttribute="leading" secondItem="Lcg-Kw-pVL" secondAttribute="leading" id="dfb-Wu-pKu"/>
+                            <constraint firstItem="uDf-fK-Juo" firstAttribute="leading" secondItem="Lcg-Kw-pVL" secondAttribute="leading" id="htD-oC-vUm"/>
+                            <constraint firstAttribute="trailing" secondItem="Gg1-Ph-6TP" secondAttribute="trailing" id="iXe-nm-d0O"/>
+                            <constraint firstItem="CtI-ZS-bsU" firstAttribute="top" secondItem="Mac-hT-YbK" secondAttribute="bottom" constant="4" id="qBv-W3-OL6"/>
+                            <constraint firstItem="uDf-fK-Juo" firstAttribute="top" secondItem="CtI-ZS-bsU" secondAttribute="bottom" id="sOQ-92-RDZ"/>
+                            <constraint firstItem="Gg1-Ph-6TP" firstAttribute="top" secondItem="uDf-fK-Juo" secondAttribute="bottom" constant="29" id="zRS-AR-wqL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="CtI-ZS-bsU" id="aJk-UA-6qz"/>
+                        <outlet property="spinner" destination="UOg-Ky-fF7" id="I8z-8Y-c18"/>
+                        <outlet property="subCheckingViewConstraint" destination="Ing-6Y-FYh" id="eR6-uS-lZo"/>
+                        <outlet property="subSearchInfoLabel" destination="yeU-fO-nd9" id="Iap-RT-9n2"/>
+                        <outlet property="tableView" destination="sfR-VX-pHv" id="ELn-Gt-eaN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2RO-Fa-g3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2037.5999999999999" y="-449.32533733133437"/>
         </scene>
         <!--Walkthrough ViewController-->
         <scene sceneID="Sog-Ld-fZ3">
